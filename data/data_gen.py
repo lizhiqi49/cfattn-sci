@@ -7,8 +7,8 @@ import numpy as np
 import imageio.v2 as imageio
 from tqdm.auto import tqdm, trange
 
-root = 'E:/Westlake/courses/计算成像/project/DAVIS'
-save_path = 'E:/Westlake/courses/计算成像/project/dataset/train'
+root = './DAVIS'
+save_path = './train'
 reso = '480p'
 block_size = 256
 num_frame = 8
