@@ -14,8 +14,8 @@ This project is experimented on Pytorch-2.0, please refer to [Pytorch's official
 2. Install dependency packages
 
 ```bash
-git clone https://github.com/lizhiqi49/CLIP-Finetune
-cd CLIP-Finetune
+git clone https://github.com/lizhiqi49/cfattn-sci
+cd cfattn-sci
 pip install -r requirements.txt
 ```
 
