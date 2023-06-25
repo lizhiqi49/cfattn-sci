@@ -56,7 +56,7 @@ def main():
         for f_start in trange(num_all_frame - num_frame + 1, desc="Frame start"):
             video_block_gt = []
             for f in range(num_frame):
-                img = imageio.imread(os.path.join(gt_dir_, gt_names[f_start+f]))
+                img = imageio.imread(os.path.join(gt_dir_, f'{f_start+f:05d}.jpg'))
                 video_block_gt.append(img)
             video_block_gt = np.stack(video_block_gt)
             mean_vid_gt = np.mean(video_block_gt, axis=0)
@@ -79,7 +79,7 @@ def main():
                     patch = video_block[f]
                     imageio.imwrite(os.path.join(save_path_, f'crop{crop_counter}', f'{f}.png'), patch)
                 raw_block = video_block * rgb2raw
-                meas = np.sum(raw_block, axis=0)
+                meas = np.sum(raw_block * masks[..., None], axis=0)
                 np.save(os.path.join(save_path_, f'crop{crop_counter}', 'measure.npy'), meas)
 
                 crop_counter += 1
